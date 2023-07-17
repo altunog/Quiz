@@ -8,15 +8,21 @@
 import UIKit
 
 struct PresentableAnswer {
-    var isCorrect: Bool
+    let question: String
+    let answer: String
+    let isCorrect: Bool
 }
 
 class CorrectAnswerCell: UITableViewCell {
     
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
 }
 
 class WrongAnswerCell: UITableViewCell {
     
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var correctAnswerLabel: UILabel!
 }
 
 class ResultsViewController: UIViewController, UITableViewDataSource {
@@ -38,6 +44,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         headerLabel.text = summary
+        tableView.register(UINib(nibName: "CorrectAnswerCell", bundle: nil), forCellReuseIdentifier: "CorrectAnswerCell")
+        tableView.register(UINib(nibName: "WrongAnswerCell", bundle: nil), forCellReuseIdentifier: "WrongAnswerCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +54,21 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let answer = answers[indexPath.row]
-        return answer.isCorrect ? CorrectAnswerCell() : WrongAnswerCell()
+        if answer.isCorrect {
+            return correctAnswerCell(for: answer)
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WrongAnswerCell") as! WrongAnswerCell
+            cell.questionLabel.text = answer.question
+            cell.correctAnswerLabel.text = answer.answer
+            return cell
+        }
+    }
+    
+    private func correctAnswerCell(for answer: PresentableAnswer) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "CorrectAnswerCell") as! CorrectAnswerCell
+        cell.questionLabel.text = answer.question
+        cell.answerLabel.text = answer.answer
+        return cell
     }
 }

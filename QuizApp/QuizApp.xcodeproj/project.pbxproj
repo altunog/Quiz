@@ -18,6 +18,8 @@
 		6A3E5A282A5BD31300658481 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3E5A272A5BD31300658481 /* QuestionViewController.swift */; };
 		6A3E5A2A2A5BD38E00658481 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A3E5A292A5BD38E00658481 /* QuestionViewController.xib */; };
 		6A5B1F982A63E4F200B515A5 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5B1F972A63E4F200B515A5 /* TestHelpers.swift */; };
+		6A5B1F9A2A63EE8700B515A5 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5B1F992A63EE8700B515A5 /* CorrectAnswerCell.xib */; };
+		6A92C8962A63F96200621CC1 /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A92C8952A63F96200621CC1 /* WrongAnswerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		6A3E5A272A5BD31300658481 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		6A3E5A292A5BD38E00658481 /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 		6A5B1F972A63E4F200B515A5 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		6A5B1F992A63EE8700B515A5 /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
+		6A92C8952A63F96200621CC1 /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				6A2FAC902A6119320005883D /* ResultsViewController.swift */,
 				6A3E5A292A5BD38E00658481 /* QuestionViewController.xib */,
 				6A2FAC942A611A290005883D /* ResultsViewController.xib */,
+				6A5B1F992A63EE8700B515A5 /* CorrectAnswerCell.xib */,
+				6A92C8952A63F96200621CC1 /* WrongAnswerCell.xib */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -194,8 +200,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A3E5A022A5BD19900658481 /* LaunchScreen.storyboard in Resources */,
+				6A92C8962A63F96200621CC1 /* WrongAnswerCell.xib in Resources */,
 				6A3E59FF2A5BD19900658481 /* Assets.xcassets in Resources */,
 				6A3E5A2A2A5BD38E00658481 /* QuestionViewController.xib in Resources */,
+				6A5B1F9A2A63EE8700B515A5 /* CorrectAnswerCell.xib in Resources */,
 				6A2FAC952A611A290005883D /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
