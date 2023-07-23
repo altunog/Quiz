@@ -1,5 +1,6 @@
 # QuizGame
- TDD Example
+ Experimenting TDD with a simple Quiz app.
+ _Under development._
 
 
 #### Current Architecture
