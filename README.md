@@ -2,5 +2,6 @@
  TDD Example
 
 
-#### Starting Architecture
-![architecture](https://github.com/altunog/QuizGame/assets/53496232/87a9d61a-f763-4010-b64c-9e5a68d6a496)
+#### Current Architecture
+
+![current](https://github.com/altunog/QuizGame/assets/53496232/1eb43a1d-9e54-42d8-89ff-8f0b303e14ec)
