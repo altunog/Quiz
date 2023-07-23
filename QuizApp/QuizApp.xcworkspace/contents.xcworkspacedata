@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../QuizEngine">
-   </FileRef>
-   <FileRef
       location = "group:../QuizEngine/QuizEngine.xcodeproj">
    </FileRef>
    <FileRef
