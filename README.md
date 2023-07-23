@@ -4,4 +4,5 @@
 
 #### Current Architecture
 
-![current](https://github.com/altunog/QuizGame/assets/53496232/8a20b6df-45c2-4c37-ba8f-33853bd2a48d)
+![currentArch](https://github.com/altunog/QuizGame/assets/53496232/721e19aa-f0c8-4fb3-aa64-e5a7ee0347de)
+
