@@ -17,6 +17,7 @@ protocol Router {
 
 struct Result<Question: Hashable, Answer> {
     let answers: [Question: Answer]
+    let score: Int
 }
 
 class Flow<Question: Hashable, Answer, R: Router> where R.Question == Question, R.Answer == Answer {
@@ -60,6 +61,6 @@ class Flow<Question: Hashable, Answer, R: Router> where R.Question == Question, 
     }
     
     private func result() -> Result<Question, Answer> {
-        return Result(answers: answers)
+        return Result(answers: answers, score: scoring(answers))
     }
 }
