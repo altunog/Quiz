@@ -20,6 +20,8 @@
 		6A5B1F982A63E4F200B515A5 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5B1F972A63E4F200B515A5 /* TestHelpers.swift */; };
 		6A5B1F9A2A63EE8700B515A5 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5B1F992A63EE8700B515A5 /* CorrectAnswerCell.xib */; };
 		6A92C8962A63F96200621CC1 /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A92C8952A63F96200621CC1 /* WrongAnswerCell.xib */; };
+		6A997E752A6D8226005205D6 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A997E742A6D8226005205D6 /* QuizEngine.framework */; };
+		6A997E762A6D8226005205D6 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A997E742A6D8226005205D6 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6AE814A22A68B165001098B9 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE814A12A68B165001098B9 /* UITableViewExtension.swift */; };
 		6AE814A42A68B1CB001098B9 /* PresentableAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE814A32A68B1CB001098B9 /* PresentableAnswer.swift */; };
 		6AE814A62A68B1E9001098B9 /* CorrectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE814A52A68B1E9001098B9 /* CorrectAnswerCell.swift */; };
@@ -35,6 +37,20 @@
 			remoteInfo = QuizApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6A997E772A6D8226005205D6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6A997E762A6D8226005205D6 /* QuizEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6A2FAC902A6119320005883D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +70,7 @@
 		6A5B1F972A63E4F200B515A5 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		6A5B1F992A63EE8700B515A5 /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		6A92C8952A63F96200621CC1 /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
+		6A997E742A6D8226005205D6 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE814A12A68B165001098B9 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		6AE814A32A68B1CB001098B9 /* PresentableAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAnswer.swift; sourceTree = "<group>"; };
 		6AE814A52A68B1E9001098B9 /* CorrectAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerCell.swift; sourceTree = "<group>"; };
@@ -65,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A997E752A6D8226005205D6 /* QuizEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +103,7 @@
 				6A3E59F42A5BD19800658481 /* QuizApp */,
 				6A3E5A0B2A5BD19900658481 /* QuizAppTests */,
 				6A3E59F32A5BD19800658481 /* Products */,
+				6A997E732A6D8226005205D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +148,14 @@
 			path = QuizAppTests;
 			sourceTree = "<group>";
 		};
+		6A997E732A6D8226005205D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A997E742A6D8226005205D6 /* QuizEngine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +166,7 @@
 				6A3E59EE2A5BD19800658481 /* Sources */,
 				6A3E59EF2A5BD19800658481 /* Frameworks */,
 				6A3E59F02A5BD19800658481 /* Resources */,
+				6A997E772A6D8226005205D6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
