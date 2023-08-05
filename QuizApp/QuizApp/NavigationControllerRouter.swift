@@ -10,6 +10,7 @@ import QuizEngine
 
 protocol ViewControllerFactory {
     func questionViewController(for question: Question<String>, answerCallback: @escaping (String) -> Void) -> UIViewController
+    func resultViewController(for result: Result<Question<String>, String>) -> UIViewController
 }
 
 class NavigationControllerRouter: Router {
@@ -27,6 +28,7 @@ class NavigationControllerRouter: Router {
     }
     
     func routeTo(result: Result<Question<String>, String>) {
-        
+        let viewController = factory.resultViewController(for: result)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
