@@ -1,5 +1,5 @@
 # QuizGame
- Experimenting TDD with a simple Quiz app.
+ Experimenting TDD and modular app architecture with a Quiz app.
  _Under development._
 
 
