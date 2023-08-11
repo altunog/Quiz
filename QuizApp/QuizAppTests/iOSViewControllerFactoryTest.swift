@@ -29,9 +29,7 @@ class iOSViewControllerFactoryTest: XCTestCase {
     }
     
     func test_questionViewController_singleAnswer_createsControllerWithSingleSelection() {
-        let controller = makeQuestionController()
-        _ = controller.view
-        XCTAssertFalse(controller.tableView.allowsMultipleSelection)
+        XCTAssertFalse(makeQuestionController().allowsMultipleSelection)
     }
     
     func test_questionViewController_multipleAnswer_createsControllerWithTitle() {
@@ -48,15 +46,13 @@ class iOSViewControllerFactoryTest: XCTestCase {
     }
     
     func test_questionViewController_multipleAnswer_createsControllerWithMultipleSelection() {
-        let controller = makeQuestionController(question: multipleAnswerQuestion)
-
-        XCTAssertTrue(controller.tableView.allowsMultipleSelection)
+        XCTAssertTrue(makeQuestionController(question: multipleAnswerQuestion).allowsMultipleSelection)
     }
     
     // MARK: Helpers
     
     func makeSUT(options: [Question<String> : [String]]) -> iOSViewControllerFactory {
-        let sut = iOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion ], options: options)
+        let sut = iOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: options)
         return sut
     }
     
