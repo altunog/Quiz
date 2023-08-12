@@ -94,8 +94,7 @@ class NavigationControllerRouterTest: XCTestCase {
         sut.routeTo(question: multipleAnswerQuestion, answerCallback: { _ in  callbackWasFired = true })
         
         factory.answerCallbacks[multipleAnswerQuestion]!(["A1"])
-        let button = viewController.navigationItem.rightBarButtonItem!
-        button.simulateTap()
+        viewController.navigationItem.rightBarButtonItem?.simulateTap()
         
         XCTAssertTrue(callbackWasFired)
     }
