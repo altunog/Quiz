@@ -85,7 +85,7 @@ class NavigationControllerRouterTest: XCTestCase {
         
         factory.answerCallbacks[Question.multipleAnswer("Q1")]!(["A1"])
         let button = viewController.navigationItem.rightBarButtonItem!
-        button.perform(button.action!, on: .main, with: nil, waitUntilDone: true)
+        button.target!.perform(button.action!, on: .main, with: nil, waitUntilDone: true)
         
         XCTAssertTrue(callbackWasFired)
     }
