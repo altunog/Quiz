@@ -6,25 +6,39 @@
 //
 
 import UIKit
+import QuizEngine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    var game: Game<Question<String>, [String], NavigationControllerRouter>?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let question1 = Question.singleAnswer("What's Mike's nationality?")
+        let question2 = Question.multipleAnswer("What's Caio's nationality?")
+        
+        let option1 = "Canadian"
+        let option2 = "American"
+        let option3 = "Greek"
+        let options1 = [option1, option2, option3]
+        
+        let option4 = "Portuguese"
+        let option5 = "American"
+        let option6 = "Brazillian"
+        let options2 = [option4, option5, option6]
+        
+        let navigationController = UINavigationController()
+        let correctAnswers = [question1: [option3], question2: [option4, option6]]
+        let factory = iOSViewControllerFactory(questions: [question1, question2], options: [question1: options1, question2: options2], correctAnswers: correctAnswers)
+        let router = NavigationControllerRouter(navigationController, factory: factory)
+        
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let viewController = ResultsViewController(summary: "You got 1/2 correct", answers: [
-            PresentableAnswer(question: "Question1? Question1? Question1? Question1?Question1? Question1?Question1? Question1?Question1? Question1?Question1? Question1?", answer: "Yeah! Yeah!Yeah!Yeah!Yeah!Yeah!Yeah!Yeah!", wrongAnswer: nil),
-            PresentableAnswer(question: "Question2? Question2?Question2?Question2?Question2?Question2?Question2?Question2?", answer: "Hell yeah! Hell yeah!Hell yeah!Hell yeah!Hell yeah!Hell yeah!Hell yeah!Hell yeah!", wrongAnswer: "Hell no! Hell no!Hell no!Hell no!Hell no!Hell no!")
-        ])
-        
-        window?.rootViewController = viewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        game = startGame(question: [question1, question2], router: router, correctAnswers: correctAnswers)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
