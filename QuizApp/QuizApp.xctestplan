@@ -9,7 +9,6 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
     "targetForVariableExpansion" : {
       "containerPath" : "container:QuizApp.xcodeproj",
       "identifier" : "6A3E59F12A5BD19800658481",
