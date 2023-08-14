@@ -17,7 +17,7 @@ class NavigationControllerRouter: Router {
         self.factory = factory
     }
     
-    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
+    func routeTo(question: Question<String>, answerCallback: @escaping (Set<String>) -> Void) {
         switch question {
         case .singleAnswer:
             show(factory.questionViewController(for: question, answerCallback: answerCallback))
@@ -34,7 +34,7 @@ class NavigationControllerRouter: Router {
         }
             }
     
-    func routeTo(result: Result<Question<String>, [String]>) {
+    func routeTo(result: Result<Question<String>, Set<String>>) {
         show(factory.resultViewController(for: result))
     }
     
@@ -45,10 +45,10 @@ class NavigationControllerRouter: Router {
 
 private class SubmitButtonController: NSObject {
     let button: UIBarButtonItem
-    let callback: ([String]) -> Void
-    private var model: [String] = []
+    let callback: (Set<String>) -> Void
+    private var model: Set<String> = []
     
-    init(button: UIBarButtonItem, callback: @escaping ([String]) -> Void) {
+    init(button: UIBarButtonItem, callback: @escaping (Set<String>) -> Void) {
         self.button = button
         self.callback = callback
         super.init()
@@ -61,7 +61,7 @@ private class SubmitButtonController: NSObject {
         updateButtonState()
     }
     
-    func update(for model: [String]) {
+    func update(for model: Set<String>) {
         self.model = model
         updateButtonState()
     }

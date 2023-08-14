@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    var game: Game<Question<String>, [String], NavigationControllerRouter>?
+    var game: Game<Question<String>, Set<String>, NavigationControllerRouter>?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let question1 = Question.singleAnswer("What's Mike's nationality?")
@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let options2 = [option4, option5, option6]
         
         let navigationController = UINavigationController()
-        let correctAnswers = [question1: [option3], question2: [option4, option6]]
+        let correctAnswers = [question1: Set([option3]), question2: Set([option4, option6])]
         let factory = iOSViewControllerFactory(questions: [question1, question2], options: [question1: options1, question2: options2], correctAnswers: correctAnswers)
         let router = NavigationControllerRouter(navigationController, factory: factory)
         
