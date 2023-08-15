@@ -5,10 +5,13 @@
 //  Created by Oğuz Kaan Altun on 6.08.2023.
 //
 
-import Foundation
-import QuizEngine
+@testable import QuizEngine
 
 extension Result: Hashable {
+
+    static func make(answers: [Question: Answer] = [:], score: Int = 0) -> Result<Question, Answer> {
+        return Result(answers: answers, score: score)
+    }
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(1)

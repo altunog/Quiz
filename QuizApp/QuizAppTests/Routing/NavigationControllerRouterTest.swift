@@ -102,8 +102,8 @@ class NavigationControllerRouterTest: XCTestCase {
     func test_routeToResult_showsResultViewController() {
         let viewController = UIViewController()
         let secondViewController = UIViewController()
-        let result = Result(answers: [singleAnswerQuestion: Set(["A1"])], score: 10)
-        let secondResult = Result(answers: [multipleAnswerQuestion: Set(["A2"])], score: 20)
+        let result = Result.make(answers: [singleAnswerQuestion: Set(["A1"])], score: 10)
+        let secondResult = Result.make(answers: [multipleAnswerQuestion: Set(["A2"])], score: 20)
         
         factory.stub(result: result, with: viewController)
         factory.stub(result: secondResult, with: secondViewController)
