@@ -161,9 +161,9 @@
 		6A728F0D2A88EE93003C5B51 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				6A3E59F72A5BD19800658481 /* SceneDelegate.swift */,
 				6A3E59F52A5BD19800658481 /* AppDelegate.swift */,
 				6AD248D22A7E8D430023841C /* iOSViewControllerFactory.swift */,
+				6A3E59F72A5BD19800658481 /* SceneDelegate.swift */,
 				6A3E59FE2A5BD19900658481 /* Assets.xcassets */,
 				6A3E5A032A5BD19900658481 /* Info.plist */,
 			);
