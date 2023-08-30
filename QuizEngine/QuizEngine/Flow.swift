@@ -8,7 +8,6 @@
 import Foundation
 
 class Flow<R: Router> {
-    
     typealias Question = R.Question
     typealias Answer = R.Answer
     
@@ -24,31 +23,27 @@ class Flow<R: Router> {
     }
     
     func start() {
-        if let firstQuestion = questions.first {
-            router.routeTo(question: firstQuestion, answerCallback: nextCallback(from: firstQuestion))
+        routeToQuestion(at: questions.startIndex)
+    }
+    
+    private func routeToQuestion(at index: Int) {
+        if index < questions.endIndex {
+            let question = questions[index]
+            router.routeTo(question: question, answerCallback: callback(for: question, at: index))
         } else {
             router.routeTo(result: result())
         }
     }
     
-    private func nextCallback(from question: Question) -> (Answer) -> Void {
+    private func callback(for question: Question, at index: Int) -> (Answer) -> Void {
         return { [weak self] answer in
-                self?.routeNext(question, answer)
+            self?.answers[question] = answer
+            self?.routeToQuestion(after: index)
         }
     }
     
-    private func routeNext(_ question: Question, _ answer: Answer) {
-        if let currentQuestionIndex = questions.firstIndex(of: question) {
-            answers[question] = answer
-            
-            let nextQuestionIndex = currentQuestionIndex + 1
-            if nextQuestionIndex < questions.count {
-                let nextQuestion = questions[nextQuestionIndex]
-                router.routeTo(question: nextQuestion, answerCallback: nextCallback(from: nextQuestion))
-            } else {
-                router.routeTo(result: result())
-            }
-        }
+    private func routeToQuestion(after index: Int) {
+        routeToQuestion(at: questions.index(after: index))
     }
     
     private func result() -> Result<Question, Answer> {
