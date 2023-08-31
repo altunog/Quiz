@@ -14,7 +14,7 @@ public final class Quiz {
         self.flow = flow
     }
     
-    public static func start<Question, Answer: Equatable, Delegate: QuizDelegate>(question: [Question], delegate: Delegate, correctAnswers: [Question: Answer]) -> Quiz where Delegate.Question == Question, Delegate.Answer == Answer {
+    public static func start<Delegate: QuizDelegate>(question: [Delegate.Question], delegate: Delegate, correctAnswers: [Delegate.Question: Delegate.Answer]) -> Quiz where Delegate.Answer: Equatable {
         let flow = Flow(questions: question, delegate: delegate, scoring: { answers in
             return scoring(answers, correctAnswers: correctAnswers)
         })
