@@ -17,7 +17,7 @@ public protocol Router {
 }
 
 @available(*, deprecated)
-public class Game<Question, Answer, R: Router> where R.Question == Question, R.Answer == Answer {
+public class Game<Question, Answer, R: Router> {
     let flow: Any
     
     init(flow: Any) {
@@ -26,7 +26,7 @@ public class Game<Question, Answer, R: Router> where R.Question == Question, R.A
 }
 
 @available(*, deprecated)
-public func startGame<Question, Answer: Equatable, R: Router>(question: [Question], router: R, correctAnswers: [Question: Answer]) -> Game<Question, Answer, R>{
+public func startGame<Question, Answer: Equatable, R: Router>(question: [Question], router: R, correctAnswers: [Question: Answer]) -> Game<Question, Answer, R> where R.Question == Question, R.Answer == Answer {
     let flow = Flow(questions: question, delegate: QuizDelegateToRouterAdapter(router), scoring: { answers in
         return scoring(answers, correctAnswers: correctAnswers)
     })
@@ -51,7 +51,7 @@ private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate {
     }
 }
 
-private func scoring<Question, Answer: Equatable> (_ answers: [Question: Answer], correctAnswers: [Question: Answer]) -> Int {
+func scoring<Question, Answer: Equatable> (_ answers: [Question: Answer], correctAnswers: [Question: Answer]) -> Int {
     return answers.reduce(0) { score, tuple in
         return score + (correctAnswers[tuple.key] == tuple.value ? 1 : 0)
     }

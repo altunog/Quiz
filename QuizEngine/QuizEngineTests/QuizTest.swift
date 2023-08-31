@@ -7,17 +7,33 @@
 
 import Foundation
 import XCTest
-import QuizEngine
+@testable import QuizEngine
+
+final class Quiz {
+    let flow: Any
+    
+    init(flow: Any) {
+        self.flow = flow
+    }
+    
+    static func start<Question, Answer: Equatable, Delegate: QuizDelegate>(question: [Question], delegate: Delegate, correctAnswers: [Question: Answer]) -> Quiz where Delegate.Question == Question, Delegate.Answer == Answer {
+        let flow = Flow(questions: question, delegate: delegate, scoring: { answers in
+            return scoring(answers, correctAnswers: correctAnswers)
+        })
+        flow.start()
+        return Quiz(flow: flow)
+    }
+}
 
 class QuizTest: XCTestCase {
     
     private let delegate = DelegateSpy()
-    private var quiz: Game<String, String, DelegateSpy>!
+    private var quiz: Quiz!
     
     override func setUp() {
         super.setUp()
         
-        quiz = startGame(question: ["Q1", "Q2"], router: delegate, correctAnswers: ["Q1": "A1", "Q2": "A2"])
+        quiz = Quiz.start(question: ["Q1", "Q2"], delegate: delegate, correctAnswers: ["Q1": "A1", "Q2": "A2"])
     }
     
     override func tearDown() {
@@ -48,17 +64,25 @@ class QuizTest: XCTestCase {
     }
     
     
-    private class DelegateSpy: Router {
+    private class DelegateSpy: Router, QuizDelegate {
         var handledResult: Result<String, String>? = nil
         
         var answerCallback: ((String) -> Void) = { _ in }
         
-        func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
+        func handle(question: String, answerCallback: @escaping (String) -> Void) {
             self.answerCallback = answerCallback
         }
         
-        func routeTo(result: Result<String, String>) {
+        func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
+            handle(question: question, answerCallback: answerCallback)
+        }
+        
+        func handle(result: Result<String, String>) {
             handledResult = result
+        }
+        
+        func routeTo(result: Result<String, String>) {
+            handle(result: result)
         }
     }
 }
