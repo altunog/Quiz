@@ -5,4 +5,4 @@ Experimenting with TDD and modular app design with a Quiz app.
 
 #### Current Architecture
 
-![currentArch_19Aug](https://github.com/altunog/QuizGame/assets/53496232/85dcdaf5-292d-4092-baa0-214ec109aa6c)
+![currentArch_2Sep](https://github.com/altunog/QuizGame/assets/53496232/c4abb4a2-4479-4522-84a2-c9e44f52879d)
