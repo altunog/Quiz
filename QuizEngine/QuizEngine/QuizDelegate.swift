@@ -19,5 +19,5 @@ public protocol QuizDelegate {
 }
 
 public extension QuizDelegate {
-    func didCompleteQuiz(withAnswers: [(question: Question, answer: Answer)]) {}
+//    func didCompleteQuiz(withAnswers: [(question: Question, answer: Answer)]) {}
 }
