@@ -51,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A34E40E2AC07A9C0025CDE3 /* QuizEngine_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = QuizEngine_iOS.xctestplan; sourceTree = "<group>"; };
 		6A3E59BD2A5AC7C000658481 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3E59C72A5AC7C000658481 /* QuizEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3E59D72A5AC8A700658481 /* FlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		6A3E59B32A5AC7C000658481 = {
 			isa = PBXGroup;
 			children = (
+				6A34E40E2AC07A9C0025CDE3 /* QuizEngine_iOS.xctestplan */,
 				6A3E59BF2A5AC7C000658481 /* QuizEngine */,
 				6A3E59CB2A5AC7C000658481 /* QuizEngineTests */,
 				6A3E59BE2A5AC7C000658481 /* Products */,
@@ -421,6 +423,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
