@@ -31,7 +31,7 @@ class ScoreTest: XCTestCase {
         XCTAssertEqual(score, 1)
     }
     
-    func test_twoCorrectAnswers_scoresTwo() {
+    func test_twoMatchingAnswers_scoresTwo() {
         let score = BasicScore.score(
             for: ["an answer", "another answer"],
             comparingTo: ["an answer", "another answer"])
