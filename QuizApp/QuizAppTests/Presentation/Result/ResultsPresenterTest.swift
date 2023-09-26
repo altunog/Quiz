@@ -23,9 +23,10 @@ class ResultsPresenterTest: XCTestCase {
     
     func test_summary_withTwoQuestionsAndScoreOne_returnsSummary() {
         let answers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
+        let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2"]]
         let result = Result.make(answers: answers, score: 1)
         
-        let sut = ResultsPresenter(result: result, questions: [singleAnswerQuestion, multipleAnswerQuestion], correctAnswers: [:])
+        let sut = ResultsPresenter(result: result, questions: [singleAnswerQuestion, multipleAnswerQuestion], correctAnswers: correctAnswers)
         
         XCTAssertEqual(sut.summary, "You got 1/2 correct")
     }
