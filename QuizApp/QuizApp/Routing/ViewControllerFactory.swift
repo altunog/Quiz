@@ -9,7 +9,7 @@ import UIKit
 import QuizEngine
 
 protocol ViewControllerFactory {
-    typealias Answers = [(question: Question<String>, answers: [String])]
+    typealias Answers = [(question: Question<String>, answer: [String])]
     
     func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController
     
