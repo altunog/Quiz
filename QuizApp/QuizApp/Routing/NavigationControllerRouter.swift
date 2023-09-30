@@ -30,12 +30,15 @@ class NavigationControllerRouter: Router {
             })
             controller.navigationItem.rightBarButtonItem = button
             show(controller)
-
         }
     }
     
     func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
         answer(for: question, completion: answerCallback)
+    }
+    
+    func didCompleteQuiz(withAnswers answers: [(question: Question<String>, answers: [String])]) {
+        show(factory.resultViewController(for: answers))
     }
     
     func routeTo(result: Result<Question<String>, [String]>) {
