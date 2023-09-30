@@ -99,7 +99,7 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertTrue(callbackWasFired)
     }
     
-    func test_routeToResult_showsResultViewController() {
+    func test_didCompleteQuiz_showsResultViewController() {
         let viewController = UIViewController()
         let secondViewController = UIViewController()
         
