@@ -14,7 +14,7 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:QuizEngine.xcodeproj",
+        "containerPath" : "container:..\/QuizEngine\/QuizEngine.xcodeproj",
         "identifier" : "6A997E582A6D7F91005205D6",
         "name" : "QuizEngine_iOSTests"
       }
