@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import QuizEngine
+import QuizEngine_iOS
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

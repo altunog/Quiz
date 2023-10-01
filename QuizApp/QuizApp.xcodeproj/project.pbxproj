@@ -21,12 +21,8 @@
 		6A3E5A2A2A5BD38E00658481 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A3E5A292A5BD38E00658481 /* QuestionViewController.xib */; };
 		6A5B1F982A63E4F200B515A5 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5B1F972A63E4F200B515A5 /* TestHelpers.swift */; };
 		6A5B1F9A2A63EE8700B515A5 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5B1F992A63EE8700B515A5 /* CorrectAnswerCell.xib */; };
-		6A5D4F042AC9D8C400933891 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5D4F032AC9D8C400933891 /* QuizEngine.framework */; };
-		6A5D4F052AC9D8C400933891 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5D4F032AC9D8C400933891 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6A5D4F072AC9D8CF00933891 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5D4F062AC9D8CF00933891 /* QuizEngine.framework */; };
-		6A5D4F082AC9D8CF00933891 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5D4F062AC9D8CF00933891 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6A5D4F0A2AC9D8D700933891 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5D4F092AC9D8D700933891 /* QuizEngine.framework */; };
-		6A5D4F0B2AC9D8D700933891 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5D4F092AC9D8D700933891 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6A5D4F0D2AC9EAC400933891 /* QuizEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5D4F0C2AC9EAC400933891 /* QuizEngine_iOS.framework */; };
+		6A5D4F0E2AC9EAC400933891 /* QuizEngine_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5D4F0C2AC9EAC400933891 /* QuizEngine_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6A6BB9102A86B60D00A61EC8 /* QuestionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BB90F2A86B60D00A61EC8 /* QuestionPresenterTest.swift */; };
 		6A6BB9122A86B77400A61EC8 /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BB9112A86B77400A61EC8 /* QuestionPresenter.swift */; };
 		6A81CCB52A7FE11100ADE6B2 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A81CCB42A7FE11100ADE6B2 /* ResultsPresenterTest.swift */; };
@@ -54,15 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6A997E772A6D8226005205D6 /* Embed Frameworks */ = {
+		6A5D4F0F2AC9EAC400933891 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6A5D4F052AC9D8C400933891 /* QuizEngine.framework in Embed Frameworks */,
-				6A5D4F082AC9D8CF00933891 /* QuizEngine.framework in Embed Frameworks */,
-				6A5D4F0B2AC9D8D700933891 /* QuizEngine.framework in Embed Frameworks */,
+				6A5D4F0E2AC9EAC400933891 /* QuizEngine_iOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +85,7 @@
 		6A5D4F032AC9D8C400933891 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5D4F062AC9D8CF00933891 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5D4F092AC9D8D700933891 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5D4F0C2AC9EAC400933891 /* QuizEngine_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6BB90F2A86B60D00A61EC8 /* QuestionPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenterTest.swift; sourceTree = "<group>"; };
 		6A6BB9112A86B77400A61EC8 /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
 		6A81CCB42A7FE11100ADE6B2 /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
@@ -113,9 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A5D4F042AC9D8C400933891 /* QuizEngine.framework in Frameworks */,
-				6A5D4F072AC9D8CF00933891 /* QuizEngine.framework in Frameworks */,
-				6A5D4F0A2AC9D8D700933891 /* QuizEngine.framework in Frameworks */,
+				6A5D4F0D2AC9EAC400933891 /* QuizEngine_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +364,7 @@
 		6A997E732A6D8226005205D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A5D4F0C2AC9EAC400933891 /* QuizEngine_iOS.framework */,
 				6A5D4F092AC9D8D700933891 /* QuizEngine.framework */,
 				6A5D4F062AC9D8CF00933891 /* QuizEngine.framework */,
 				6A5D4F032AC9D8C400933891 /* QuizEngine.framework */,
@@ -389,7 +383,7 @@
 				6A3E59EE2A5BD19800658481 /* Sources */,
 				6A3E59EF2A5BD19800658481 /* Frameworks */,
 				6A3E59F02A5BD19800658481 /* Resources */,
-				6A997E772A6D8226005205D6 /* Embed Frameworks */,
+				6A5D4F0F2AC9EAC400933891 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

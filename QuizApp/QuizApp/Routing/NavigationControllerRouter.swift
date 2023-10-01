@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import QuizEngine
+import QuizEngine_iOS
 
 final class NavigationControllerRouter: QuizDelegate {
     private let navigationController: UINavigationController

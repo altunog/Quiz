@@ -7,7 +7,7 @@
 
 import UIKit
 import XCTest
-import QuizEngine
+import QuizEngine_iOS
 @testable import QuizApp
 
 class NavigationControllerRouterTest: XCTestCase {

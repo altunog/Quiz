@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import QuizEngine
+import QuizEngine_iOS
 
 final class iOSViewControllerFactory: ViewControllerFactory {
     typealias Answers = [(question: Question<String>, answer: [String])]
