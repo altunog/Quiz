@@ -1,6 +1,5 @@
 # Quiz
 Experimenting with TDD and modular app design with a Quiz app.
- _Under development._
 
 
 #### Current Architecture
