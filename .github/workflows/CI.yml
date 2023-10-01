@@ -23,4 +23,4 @@ jobs:
         platform: $({ 'iOS Simulator' })
       run: |
         device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
-        xcodebuild clean build -workspace QuizApp/QuizApp.xcworkspace -scheme "$scheme" -sdk iphonesimulator -destination "platform=$platform,name=$device" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+        xcodebuild clean build -workspace QuizApp/QuizApp.xcworkspace -scheme $scheme -sdk iphonesimulator -destination "platform=$platform,name=$device" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
