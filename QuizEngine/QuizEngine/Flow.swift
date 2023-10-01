@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Flow<Delegate: QuizDelegate> {
+final class Flow<Delegate: QuizDelegate> {
     typealias Question = Delegate.Question
     typealias Answer = Delegate.Answer
     
