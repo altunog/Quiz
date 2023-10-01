@@ -18,8 +18,4 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode.app
 
     - name: Build and test
-      env:
-        platform: $({ 'iOS Simulator' })
-      run: |
-        device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
-        xcodebuild clean build -workspace QuizApp/QuizApp.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=$platform,name=$device" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+      run: xcodebuild clean build -workspace QuizApp/QuizApp.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 14,OS=16.2" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
