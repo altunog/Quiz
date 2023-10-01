@@ -17,7 +17,7 @@
 		6A80CCF42AA12E89008CE5A1 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A80CCF32AA12E89008CE5A1 /* Quiz.swift */; };
 		6A997E462A6D5BAD005205D6 /* DeprecatedGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A997E452A6D5BAD005205D6 /* DeprecatedGameTest.swift */; };
 		6A997E4A2A6D65B9005205D6 /* DeprecatedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A997E492A6D65B9005205D6 /* DeprecatedGame.swift */; };
-		6A997E5A2A6D7F91005205D6 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A997E502A6D7F91005205D6 /* QuizEngine.framework */; };
+		6A997E5A2A6D7F91005205D6 /* QuizEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A997E502A6D7F91005205D6 /* QuizEngine_iOS.framework */; };
 		6A997E672A6D804D005205D6 /* DeprecatedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A997E492A6D65B9005205D6 /* DeprecatedGame.swift */; };
 		6A997E6A2A6D8052005205D6 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3E59D92A5ACB0100658481 /* Flow.swift */; };
 		6A997E6B2A6D8055005205D6 /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3E59D72A5AC8A700658481 /* FlowTest.swift */; };
@@ -59,7 +59,7 @@
 		6A80CCF32AA12E89008CE5A1 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		6A997E452A6D5BAD005205D6 /* DeprecatedGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeprecatedGameTest.swift; sourceTree = "<group>"; };
 		6A997E492A6D65B9005205D6 /* DeprecatedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeprecatedGame.swift; sourceTree = "<group>"; };
-		6A997E502A6D7F91005205D6 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A997E502A6D7F91005205D6 /* QuizEngine_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEngine_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A997E592A6D7F91005205D6 /* QuizEngine_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngine_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADCCB422AC0562F0070C95C /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		6ADCCB462AC0594D0070C95C /* DelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateSpy.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A997E5A2A6D7F91005205D6 /* QuizEngine.framework in Frameworks */,
+				6A997E5A2A6D7F91005205D6 /* QuizEngine_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 			children = (
 				6A3E59BD2A5AC7C000658481 /* QuizEngine.framework */,
 				6A3E59C72A5AC7C000658481 /* QuizEngineTests.xctest */,
-				6A997E502A6D7F91005205D6 /* QuizEngine.framework */,
+				6A997E502A6D7F91005205D6 /* QuizEngine_iOS.framework */,
 				6A997E592A6D7F91005205D6 /* QuizEngine_iOSTests.xctest */,
 			);
 			name = Products;
@@ -216,7 +216,7 @@
 			);
 			name = QuizEngine_iOS;
 			productName = QuizEngine_iOS;
-			productReference = 6A997E502A6D7F91005205D6 /* QuizEngine.framework */;
+			productReference = 6A997E502A6D7F91005205D6 /* QuizEngine_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6A997E582A6D7F91005205D6 /* QuizEngine_iOSTests */ = {
@@ -603,10 +603,10 @@
 		6A997E612A6D7F91005205D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5TUA6QYFHS;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -625,7 +625,8 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.altunog.QuizEngine-iOS";
-				PRODUCT_NAME = QuizEngine;
+				PRODUCT_NAME = QuizEngine_iOS;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -640,10 +641,10 @@
 		6A997E622A6D7F91005205D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5TUA6QYFHS;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -662,7 +663,8 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.altunog.QuizEngine-iOS";
-				PRODUCT_NAME = QuizEngine;
+				PRODUCT_NAME = QuizEngine_iOS;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
